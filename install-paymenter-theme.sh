@@ -48,7 +48,13 @@ fi
 
 if ! grep -q 'NexyonCloud Paymenter theme' "$TARGET_CSS"; then
   printf '\n\n/* NexyonCloud Paymenter theme overrides */\n' >> "$TARGET_CSS"
-  cat "$SCRIPT_DIR/assets/nexyoncloud-overrides.css" >> "$TARGET_CSS"
+  if [[ -f "$SCRIPT_DIR/assets/nexyoncloud-overrides.css" ]]; then
+    cat "$SCRIPT_DIR/assets/nexyoncloud-overrides.css" >> "$TARGET_CSS"
+  else
+    echo "Downloading NexyonCloud CSS from GitHub..."
+    curl -fLsS "https://raw.githubusercontent.com/alokgame2009-bot/nexyoncloud-paymenter-theme/main/assets/nexyoncloud-overrides.css" -o /tmp/nexyoncloud-overrides.css
+    cat /tmp/nexyoncloud-overrides.css >> "$TARGET_CSS"
+  fi
 fi
 
 echo "\nBuilding theme assets..."
