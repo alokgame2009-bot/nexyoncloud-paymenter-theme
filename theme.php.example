@@ -1,0 +1,11 @@
+<?php
+/*
+ * Reference only. Recommended install flow runs Paymenter's official
+ * `php artisan app:theme:create` command so your installed version's default
+ * theme settings and Vite configuration are preserved.
+ */
+return [
+    'name' => 'NexyonCloud',
+    'author' => 'NexyonCloud',
+    'url' => 'https://billing.nexyoncloud.fun',
+];

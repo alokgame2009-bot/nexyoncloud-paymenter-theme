@@ -1,0 +1,48 @@
+/* NexyonCloud Paymenter theme — blue/white hosting billing UI */
+:root {
+  --nxc-blue: #315cf5;
+  --nxc-blue-dark: #2047d8;
+  --nxc-ink: #17233d;
+  --nxc-muted: #68758d;
+  --nxc-line: #e4eaf4;
+  --nxc-panel: #ffffff;
+  --nxc-soft: #f5f8ff;
+}
+html { scroll-behavior: smooth; }
+body { background: #f7f9fd !important; color: var(--nxc-ink); }
+/* Cards/panels */
+.rounded-xl, .rounded-2xl, .rounded-lg, [class*="card"] {
+  border-color: var(--nxc-line);
+}
+.rounded-xl, .rounded-2xl {
+  box-shadow: 0 8px 26px rgba(29, 55, 110, .045);
+}
+/* Brand and links */
+a { transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
+a:hover { color: var(--nxc-blue); }
+/* Primary action controls */
+button, [role="button"], input[type="submit"] { transition: transform .16s ease, box-shadow .16s ease, background-color .16s ease; }
+button:hover, input[type="submit"]:hover { box-shadow: 0 5px 15px rgba(49, 92, 245, .14); }
+/* Inputs */
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+  border-color: #dbe3f1 !important;
+  border-radius: 10px !important;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid rgba(49, 92, 245, .14) !important;
+  border-color: var(--nxc-blue) !important;
+}
+/* Tables */
+thead { background: #f5f8ff; }
+th { color: #53617a; font-weight: 650; }
+td, th { border-color: var(--nxc-line) !important; }
+/* Soft blue accents without replacing Paymenter's functional classes */
+.bg-primary { background-color: var(--nxc-blue) !important; }
+.text-primary { color: var(--nxc-blue) !important; }
+.border-primary { border-color: var(--nxc-blue) !important; }
+/* Focus visibility */
+:focus-visible { outline: 2px solid var(--nxc-blue); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .rounded-xl, .rounded-2xl { border-radius: 14px; }
+  table { font-size: .875rem; }
+}
